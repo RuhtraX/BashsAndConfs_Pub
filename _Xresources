@@ -1,0 +1,20 @@
+XTerm*renderFont: true
+XTerm*utf8: 1
+XTerm*faceName: clean:style=regular:antialias=false
+XTerm*.faceNameDoublesize: mikachan-PS:style=regular:antialias=false
+XTerm*faceSize: 10
+XTerm*pointerShape: left_ptr
+XTerm*pointerColor: black
+XTerm*pointerColorBackground: white
+XTerm*background: black
+XTerm*foreground: white
+XTerm*locale: true
+XTerm*reverseVideo: false
+XTerm*colorMode: true
+XTerm.vt100.scrollBar: true
+XTerm.vt100.rightScrollBar: true
+XTerm*allowBoldFonts: false
+
+xvkbd.compact: true
+xvkbd.secure: true
+xvkbd.modalKeytop: true

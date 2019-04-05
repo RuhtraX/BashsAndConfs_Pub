@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while true;
+do
+	wget -c -t 0 -O 'outputFile.mp4' -T 5 'https://remote.link/File.mp4'
+	if (( $?==0 ))
+	then
+		exit 0
+	fi
+done

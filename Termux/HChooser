@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd '/path/to/folder/here/'
+typeset -i num=`ls | cat -n | awk 'END{print $1}'`
+echo
+echo "total of $num options"
+while :; do
+  typeset -i choice=$(( ( RANDOM % $num ) + 1 ))
+  echo
+  echo "Choosen one: $choice"
+  choosen=`ls | awk "NR==$choice"`
+  echo $choosen
+  echo -n "One more? [Y/n] "
+  read ans
+  if [ ! -z "$ans" ]; then
+    if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
+      exit 0
+    fi
+  fi
+done
+echo "We're reaching lines that shouldn't be reachable"
+exit 1

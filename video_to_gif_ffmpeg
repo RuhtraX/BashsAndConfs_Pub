@@ -1,0 +1,29 @@
+#!/bin/bash
+if (($# == 1)); then
+  ffprobe "$1"
+  if [ $? != 0 ]; then
+    exit 4
+  fi
+	echo -n "Desired width of the GIF output: "
+	read width
+	echo -n "Desired fps of GIF output: "
+	read fps
+	echo "Generating color palette"
+	ffmpeg -loglevel 16 -y -i "$1" -vf fps=$fps,scale=$width:-1:flags=lanczos,palettegen palette.png
+	if (($? != 0)); then
+		exit 2
+	fi
+	echo "Generated color palette"
+	echo "Generating GIF output to \"$1.gif\""
+	ffmpeg -loglevel 16 -i "$1" -y -i palette.png -filter_complex "fps=$fps,scale=$width:-1:flags=lanczos[x];[x][1:v]paletteuse" "$1.gif"
+	if (($? != 0)); then
+		exit 3
+	fi
+	echo "Removing palette.png file"
+	rm palette.png
+	echo "Done"
+	exit 0
+else
+	echo "No input file given or more than 1 input files given"
+	exit 1
+fi

@@ -1,0 +1,8 @@
+cd /storage/emulated/0/Documents
+alias ls="ls -Q --group-directories-first"
+echo "-------------------- docs --------------------"
+ls
+echo "-------------------- zapo --------------------"
+ls "/storage/emulated/0/WhatsApp/Media/WhatsApp Documents"
+echo "-------------------- ---- --------------------"
+bash --rcfile ~/docbash.rc

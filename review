@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" != '-r' ]; then # enables shuffle mode
+	`feh -F -D 2 -Y -Z *.jpg`
+else
+	`feh -F -D2 -Y -Z -z *.jpg`
+fi

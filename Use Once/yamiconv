@@ -1,0 +1,24 @@
+#!/bin/bash
+typeset -i c=1 # file number indexer
+cd "/optional/fixed/path/$1"
+if (( $? != 0 )); then
+  echo "couldn't change to folder $1"
+  exit 1
+fi
+for i in *.wmv; do
+  echo "converting file $i"
+  if (( $c < 10 )); then # prefixes a 0 in the file number
+    ffmpeg -loglevel 16 -i $i -b:v 1800k -b:a 192k -strict -2 $1-0$c.mp4
+  else
+    ffmpeg -loglevel 16 -i $i -b:v 1800k -b:a 192k -strict -2 $1-$c.mp4
+  fi
+  if (( $? != 0 )); then
+    echo "Something went wrong with the conversion."
+    exit 2
+  fi
+  rm $i
+  echo "convertion completed, removed file $i"
+  c=$c+1
+done
+echo "Process completed succesfully"
+exit 0

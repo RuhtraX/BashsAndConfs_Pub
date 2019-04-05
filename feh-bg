@@ -1,0 +1,6 @@
+#!/bin/sh
+while true;
+do
+	feh -z --bg-fill /path/to/pictures/folder
+	sleep 900
+done
