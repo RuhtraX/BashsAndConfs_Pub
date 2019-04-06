@@ -1,5 +1,5 @@
 #!/bin/bash
-crf="24" # output video quality
+crf="20" # output video quality (lower = better quality)
 echo -n "Remove files after converting? "
 read ans
 if [ -z ${ans+x} ]; then
