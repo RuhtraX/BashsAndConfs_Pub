@@ -4,12 +4,12 @@ if [ -n "$1" ] && [ -n "$2" ] ; then
 	typeset -i num="$2"
 	for i in mpv*.jpg; do
 		if (( $num < 10 )); then
-			mv $i "$name-0$num.jpg"
+			mv -i $i "$name-0$num.jpg"
 			if (( "$?" != 0 )); then
 				exit 2
 			fi
 		else
-			mv $i "$name-$num.jpg"
+			mv -i $i "$name-$num.jpg"
 			if (( "$?" != 0 )); then
 				exit 2
 			fi
