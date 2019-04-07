@@ -19,12 +19,14 @@ Used for setting the wallpaper with a random picture found within the provided f
 Used for converting GIFs to video, with and without crf (crf proved to be more efficient) using ffmpeg
 ### HChooser
 Used for selecting a random folder or file within a given directory (or simply an ero-manga chooser from the ero-manga folder)
+### jpgconv
+Used for converting all jpg files to png found within the current directory
 ### login
 Used for playing a different login sound based on user last login using vlc player CLI
 ### mustDownload
 Used for "brute-force" download a file from the given URL using wget
 ### pngconv
-Used for converting all png files found within the current directory
+Used for converting all png files to jpg found within the current directory
 ### RandomAnimeFanservice
 Starts a picture slideshow using feh on given directory (AnimeFanservice folder not included)
 ### rename
