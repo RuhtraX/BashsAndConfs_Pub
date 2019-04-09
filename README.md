@@ -30,7 +30,7 @@ Used for converting all png files to jpg found within the current directory
 ### RandomAnimeFanservice
 Starts a picture slideshow using feh on given directory (AnimeFanservice folder not included)
 ### rename
-Used for renaming mpv screenshots to given file name sequentialy starting at given number
+Used for renaming files in [filename]\*.jpg format to given file name sequentialy starting at given number
 ### review
 Used for starting feh slideshow on current directory, with option to be sequential or random.
 ### video_to_gif_ffmpeg
