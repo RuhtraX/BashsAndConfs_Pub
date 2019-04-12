@@ -11,12 +11,15 @@ if (($# == 1)); then
 	echo "Generating color palette"
 	ffmpeg -loglevel 16 -y -i "$1" -vf fps=$fps,scale=$width:-1:flags=lanczos,palettegen palette.png
 	if (($? != 0)); then
+		echo "Failed to generate palette.png file"
 		exit 2
 	fi
 	echo "Generated color palette"
 	echo "Generating GIF output to \"$1.gif\""
 	ffmpeg -loglevel 16 -i "$1" -y -i palette.png -filter_complex "fps=$fps,scale=$width:-1:flags=lanczos[x];[x][1:v]paletteuse" "$1.gif"
 	if (($? != 0)); then
+		echo "Convertion failed"
+		rm palette.png
 		exit 3
 	fi
 	echo "Removing palette.png file"

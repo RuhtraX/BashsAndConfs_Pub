@@ -16,7 +16,7 @@ else
 		exit 1
 	fi
 fi
-for i in $oldName*.jpg ; do
+for i in "$oldName"*.jpg ; do
 	if (( $num < 10 )); then
 		mv -i "$i" "$name-0$num.jpg"
 		if (( $? != 0 )); then
