@@ -23,6 +23,8 @@ Used for selecting a random folder or file within a given directory (or simply a
 Used for converting all jpg files to png found within the current directory
 ### login
 Used for playing a different login sound based on user last login using vlc player CLI
+### mpview
+Used for starting mpv with loop, shuffle and custom options for screenshots
 ### mustDownload
 Used for "brute-force" download a file from the given URL using wget
 ### pngconv
