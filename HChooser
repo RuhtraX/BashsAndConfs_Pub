@@ -3,19 +3,19 @@ cd "/path/to/folder"
 typeset -i num=`ls | cat -n | awk 'END{print $1}'`
 echo "Total of $num options"
 while :; do
-  typeset -i choice=$(( ( RANDOM % $num) + 1 ))
-  echo "Choosen one: $choice"
-  choosen=`ls | cat | awk "NR==$choice"`
-  echo $choosen
-  echo -n "One more? [Y/n] "
-  read ans
-  if [ -z "$ans" ]; then
-    ans='y'
-  else
-    if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
-      exit 0
-    fi
-  fi
-  echo
+	typeset -i choice=$(( ( RANDOM % $num) + 1 ))
+	echo "Choosen one: $choice"
+	choosen=`ls | cat | awk "NR==$choice"`
+	echo $choosen
+	echo -n "One more? [Y/n] "
+	read ans
+	if [ -z "$ans" ]; then
+		ans='y'
+	else
+		if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
+			exit 0
+		fi
+	fi
+	echo
 done
 exit 2

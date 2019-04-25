@@ -1,9 +1,9 @@
 #!/bin/bash
 if (($# == 1)); then
-  ffprobe "$1"
-  if [ $? != 0 ]; then
-    exit 4
-  fi
+	ffprobe "$1"
+	if [ $? != 0 ]; then
+		exit 4
+	fi
 	echo -n "Desired width of the GIF output: "
 	read width
 	echo -n "Desired fps of GIF output: "

@@ -3,32 +3,32 @@ bv="980k" # default output video bitrate
 echo -n "Remove files after converting? "
 read ans
 if [ -z ${ans+x} ]; then # assumes yes as default answer
-  ans="y"
+	ans="y"
 fi
 if [ ! -z ${1+x} ]; then # allows for custom bitrate if passed as argument
-  bv=$1"k"
+	bv=$1"k"
 fi
 if [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
-  for i in *.gif; do
-    f=`echo "$i"|head -c -5`
-    echo "converting file $i"
-    ffmpeg -loglevel 16 -y -i "$i" -c:v vp9 -an -b:v "$bv" "$f.webm"
-    if [ $? != 0 ]; then
-      echo "Something went wrong; exiting"
-      exit 1
-    fi
-    echo -n "done; "
-    rm -f "$i"
-    echo "removed file $i"
-  done
+	for i in *.gif; do
+		f=`echo "$i"|head -c -5`
+		echo "converting file $i"
+		ffmpeg -loglevel 16 -y -i "$i" -c:v vp9 -an -b:v "$bv" "$f.webm"
+		if [ $? != 0 ]; then
+			echo "Something went wrong; exiting"
+			exit 1
+		fi
+		echo -n "done; "
+		rm -f "$i"
+		echo "removed file $i"
+	done
 else # answered "no" to remove files
-  for i in *.gif; do
-    f=`echo "$i"|head -c -5`
-    echo "converting file $i"
-    ffmpeg -loglevel 16 -y -i "$i" -c:v vp9 -an -b:v "$bv" "$f.webm"
-    if [ $? != 0 ]; then
-      echo "Something went wrong; exiting"
-      exit 1
-    fi
-  done
+	for i in *.gif; do
+		f=`echo "$i"|head -c -5`
+		echo "converting file $i"
+		ffmpeg -loglevel 16 -y -i "$i" -c:v vp9 -an -b:v "$bv" "$f.webm"
+		if [ $? != 0 ]; then
+			echo "Something went wrong; exiting"
+			exit 1
+		fi
+	done
 fi
