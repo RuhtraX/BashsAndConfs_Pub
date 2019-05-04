@@ -4,9 +4,9 @@ typeset -i num=`ls | cat -n | awk 'END{print $1}'`
 echo "Total of $num options"
 while :; do
 	typeset -i choice=$(( ( RANDOM % $num) + 1 ))
-	echo "Choosen one: $choice"
-	choosen=`ls | cat | awk "NR==$choice"`
-	echo $choosen
+	echo "Chosen one: $choice"
+	chosen=`ls | awk "NR==$choice"`
+	echo $chosen
 	echo -n "One more? [Y/n] "
 	read ans
 	if [ -z "$ans" ]; then
