@@ -13,8 +13,13 @@ else
 		echo "	rename [newName] [number to start counting]"
 		echo "or for renaming oldName*.jpg files:"
 		echo "	rename [oldName] [newName] [number]"
+		echo "if number = 0 I'll detect it automatically"
 		exit 1
 	fi
+fi
+if [ $num == 0 ] ; then
+	typeset -i num=`ls $name*.jpg | awk 'END{print $1}' | grep -o --color=never '[0-9]\+'`
+	num=$num+1
 fi
 for i in "$oldName"*.jpg ; do
 	if (( $num < 10 )); then
