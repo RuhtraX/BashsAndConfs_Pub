@@ -1,4 +1,5 @@
 #!/bin/bash
+typeset -i num2=0
 if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ] ; then
 	oldName="$1"
 	name="$2"
@@ -13,12 +14,18 @@ else
 		echo "	rename [newName] [number to start counting]"
 		echo "or for renaming oldName*.jpg files:"
 		echo "	rename [oldName] [newName] [number]"
-		echo "if number = 0 I'll detect it automatically"
+		echo "if number = 0 I'll try to detect it automatically"
 		exit 1
 	fi
 fi
 if [ $num == 0 ] ; then
-	typeset -i num=`ls $name*.jpg | awk 'END{print $1}' | grep -o --color=never '[1-9][0-9]*' | tail -1`
+	typeset -i num=`ls $name*.jpg | awk 'END{print $1}' | grep -o --color=never '[0-9]\+' | tail -1`
+	if [ $num == 99 ] ; then
+		[ -f $name?[0-9][0-9][0-9]*.jpg ] && typeset -i num2=`ls $name?[0-9][0-9][0-9]*.jpg | awk 'END{print $1}' | grep -o --color=never '[0-9]\+' | tail -1`
+		if [ $num2 -gt $num ] ; then
+			num=$num2
+		fi
+	fi
 	num=$num+1
 fi
 for i in "$oldName"*.jpg ; do
