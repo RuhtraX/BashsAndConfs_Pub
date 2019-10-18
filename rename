@@ -1,5 +1,4 @@
 #!/bin/bash
-typeset -i num2=0
 if [ -n "$1" ] && [ -n "$2" ] && [ -n "$3" ] ; then
 	oldName="$1"
 	name="$2"
