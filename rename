@@ -18,7 +18,7 @@ else
 	fi
 fi
 if [ $num == 0 ] ; then
-	typeset -i num=`ls $name*.jpg | awk '{print $1}' | grep -o --color=never '[0-9]\+' | sort -g | tail -1`
+	typeset -i num=10#`ls $name*.jpg | grep -Po --color=never '[0-9]+' | sort -g | tail -1`
 	num=$num+1
 fi
 for i in "$oldName"*.jpg ; do
