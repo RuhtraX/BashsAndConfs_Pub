@@ -31,11 +31,13 @@ Used for starting mpv with loop, shuffle and custom options for screenshots (req
 Used to "brute-force" download a file from the given URL using wget
 ### pngconv
 Used for converting all png files to jpg found within the current directory (requires [ImageMagick](https://imagemagick.org/index.php))
+### webpconv
+Used for converting all webp files to jpg found within the current directory (requires [ImageMagick](https://imagemagick.org/index.php))
 ### RandomAnimeFanservice
 Starts a picture slideshow using feh on given directory (requires [feh](https://feh.finalrewind.org/)) _(AnimeFanservice folder not included)_
 ### rename
 Used for renaming files in [filename]\*.jpg format to given file name sequentialy starting at given number
 ### review
 Used for starting feh slideshow on current directory, with option to be sequential or random. (requires [feh](https://feh.finalrewind.org/))
-### video_to_gif_ffmpeg
+### video\_to\_gif\_ffmpeg
 Used for converting a video to GIF using ffmpeg. (requires [ffmpeg](https://ffmpeg.org/))

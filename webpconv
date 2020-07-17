@@ -1,0 +1,30 @@
+#!/bin/bash
+echo -n "remove .png files after convertion? [y/n] "
+read ans
+if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
+  for i in *.webp; do
+    if [ "$i" == "*.webp" ] ; then
+     echo "No webp files present"
+     exit 1
+    fi
+    echo "Converting file $i"
+    f=`echo "$i" | head -c -4`
+    convert -quality 94 "$i" -background black -alpha remove "$f"jpg
+  done
+else
+  for i in *.webp; do
+    if [ "$i" == '*.webp' ] ; then
+      echo "No webp files present"
+      exit 1
+    fi
+    echo "Converting file $i"
+    f=`echo "$i" | head -c -4`
+    convert -quality 94 "$i" -background black -alpha remove "$f"jpg
+    if (( $? == 0 )); then
+      rm "$i"
+    else
+      exit 2
+    fi
+    echo "Removed file $i"
+  done
+fi
