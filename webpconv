@@ -8,7 +8,7 @@ if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
      exit 1
     fi
     echo "Converting file $i"
-    f=`echo "$i" | head -c -4`
+    f=`echo "$i" | head -c -5`
     convert -quality 94 "$i" -background black -alpha remove "$f"jpg
   done
 else
@@ -18,7 +18,7 @@ else
       exit 1
     fi
     echo "Converting file $i"
-    f=`echo "$i" | head -c -4`
+    f=`echo "$i" | head -c -5`
     convert -quality 94 "$i" -background black -alpha remove "$f"jpg
     if (( $? == 0 )); then
       rm "$i"
