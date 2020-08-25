@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- you can reload the configuration file with right click -> Performance Monitor - (Reload Configuration) -->
+<perfbar>
+    <counters>
+        <!-- you can run `typeperf -q>counters.txt` to list all available counters on your system -->
+        <counter name="cpu" value="\Informações do Processador(*)\% Tempo do Processador"/>
+        <counter name="mem" value="\Memória\Bytes Confirmados"/>
+				<counter name="net" value="\Interface de rede(Qualcomm Atheros AR956x Wireless Network Adapter)\Total de bytes/s"/>
+        <!--<counter name="netin" value="\Network Interface(Intel[R] Ethernet Connection [2] I219-V)\Bytes Received/sec"/>-->
+					<!--<counter name="netin" value="\Network Interface(Realtek PCIe GBE Family Controller)\Bytes Received/sec"/>-->
+						<!--<counter name="netout" value="\Network Interface(Realtek PCIe GBE Family Controller)\Bytes Sent/sec"/>-->
+					<!--<counter name="freediskC" value="\LogicalDisk(C:)\Free Megabytes"/>-->
+						<!--<counter name="processCount" value="\Sistema\Processos"/>-->
+    </counters>
+    <pages>
+        <!-- use left button click on the performance bar to switch between the pages -->
+        <page offsetY="2">
+            <lines>
+							<line fontFamily="Fira Code" fontSize="9" fontItalic="false" fontBold="false" fontColor="FFFFFF">
+									<display suffix="%" counter="cpu" decimals="1"/>
+									<display prefix="·" suffix="M" counter="mem" divide="1048576"/>
+									<!--<display prefix="|" counter="processCount"/>-->
+							</line>
+							<line>
+									<display suffix="Mb" counter="net" decimals="7" divide="131072"/>
+							</line>
+									<!--<line fontFamily="Segoe UI" fontSize="8" fontItalic="false" fontBold="true" fontColor="FFFFFF">-->
+                    <!--<display prefix=" · D: " suffix=" MB/s" counter="netin" decimals="1" divide="1048576"/>-->
+											<!--<display prefix=" · D: " suffix="KB/s" counter="netin" decimals="0" divide="1024"/>-->
+												<!--<display prefix=" || U: " suffix="KB/s" counter="netout" decimals="0" divide="1024"/>-->
+									<!--</line>-->
+            </lines>
+        </page>
+				<!--<page offsetY="6">-->
+						<!--<lines>-->
+								<!--<line fontFamily="Segoe UI" fontSize="8" fontItalic="false" fontBold="true" fontColor="FFFFFF">-->
+								<!--<display prefix="Free C: " suffix=" GB" counter="freediskC" decimals="1" divide="1024"/>-->
+						<!--</line>-->
+					<!--</lines>-->
+				<!--</page>-->
+    </pages>
+</perfbar>
