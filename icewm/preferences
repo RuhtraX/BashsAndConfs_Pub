@@ -1,0 +1,34 @@
+#  Clock Time format (strftime format string)
+TimeFormat="%a, %d/%m %H:%M"
+
+KeySysWindowList="F12"
+
+WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
+
+TaskBarShowCPUStatus=1 # 0/1
+
+TaskBarShowMEMStatus=0 # 0/1
+
+TaskBarShowNetStatus=0 # 0/1
+
+Alpha=1 # 0/1
+
+TaskBarWorkspacesTop=0 # 0/1
+
+TaskBarShowAllWindows=0 # 0/1
+
+ShowFocusModeMenu=0 # 0/1
+
+ShowHelp=0 # 0/1
+
+ShowRun=0 # 0/1
+
+ShowThemesMenu=0 # 0/1
+
+TaskBarShowStartMenu=1 # 0/1
+
+ShowThemesMenu=0 # 0/1
+
+TaskBarShowShowDesktopButton=0 # 0/1
+
+TaskBarShowWindowListMenu=0 # 0/1

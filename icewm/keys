@@ -1,0 +1,13 @@
+key "Alt+Ctrl+i"       firefox
+key "Alt+Ctrl+t"       xterm
+key "Super+r"          dmenu_run
+key "Super+e"          pcmanfm-qt
+key "Alt+Ctrl+m"       audacious
+key "Ctrl+Shift+Esc"   ksysguard
+key "Alt+Ctrl+Esc"     xkill   
+key "Print"            io.elementary.screenshot-tool -s
+key "Ctrl+Print"       io.elementary.screenshot-tool -r
+
+# Multimedia
+key "XF86AudioLowerVolume"    amixer set Master 2%-
+key "XF86AudioRaiseVolume"    amixer set Master 2%+
