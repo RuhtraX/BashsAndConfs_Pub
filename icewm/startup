@@ -1,5 +1,5 @@
 setxkbmap -layout us,br -option grp:shifts_toggle
-picom -b --experimental-backends --config /home/acervantes/.config/compton/icewm.conf &
+picom -b --config /home/acervantes/.config/compton/icewm.conf &
 redshift -O 4500 -b 0.8 &
 nm-applet &
 transmission-qt &
