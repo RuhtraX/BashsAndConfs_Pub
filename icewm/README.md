@@ -12,6 +12,7 @@
 - redshift
 - nm-applet
 - transmission-qt
+- pasystray
 
 ### keys sets keyboard shortcuts for
 - firefox (Alt+Ctrl+i)
@@ -33,6 +34,7 @@
 - starts nm-applet
 - starts transmission-qt
 - starts firefox
+- starts pasystray
 
 ### toolbar sets the shortcuts available on TaskBar
 
