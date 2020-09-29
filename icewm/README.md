@@ -2,7 +2,7 @@
 
 ### these configs assumes the following programs are installed:
 - firefox
-- xterm
+- sakura
 - dmenu\_run
 - pcmanfm-qt
 - audacious
@@ -16,7 +16,7 @@
 
 ### keys sets keyboard shortcuts for
 - firefox (Alt+Ctrl+i)
-- xterm (Alt+Ctrl+t)
+- sakura (Alt+Ctrl+t)
 - dmenu\_run (Super+r) (Just like Windows)
 - pcmanfm-qt (Super+e) (Just like Windows)
 - audacious (Alt+Ctrl+m)

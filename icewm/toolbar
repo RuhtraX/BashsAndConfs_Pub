@@ -1,3 +1,3 @@
 prog "Firefox" firefox /usr/bin/firefox
 prog "pcmanfm-qt" system-file-manager.png /usr/bin/pcmanfm-qt
-prog "xterm" utilities-terminal /usr/bin/xterm
+prog "sakura" utilities-terminal /usr/bin/sakura
