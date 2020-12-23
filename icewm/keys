@@ -11,3 +11,6 @@ key "Ctrl+Print"       io.elementary.screenshot-tool -r
 # Multinoias
 key "XF86AudioLowerVolume"    amixer set Master 2%-
 key "XF86AudioRaiseVolume"    amixer set Master 2%+
+key "XF86AudioPlay"           playerctl -p audacious play-pause
+key "XF86AudioNext"           playerctl -p audacious next
+key "XF86AudioPrev"           playerctl -p audacious previous

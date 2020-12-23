@@ -13,6 +13,7 @@
 - nm-applet
 - transmission-qt
 - pasystray
+- playerctl
 
 ### keys sets keyboard shortcuts for
 - firefox (Alt+Ctrl+i)
@@ -24,6 +25,7 @@
 - xkill (Alt+Ctrl+Esc) (Very fun to use, BTW)
 - screenshot-tool (Print) (For entire screen)
 - screenshot-tool (Ctrl+Print) (For selecting area to be printed)
+- Multimedia controls (Play-pause, Next, Previous) for Audacious using playerctl
 
 ### prefoverride uses fixed path for the background pic
 
