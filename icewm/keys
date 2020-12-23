@@ -14,3 +14,4 @@ key "XF86AudioRaiseVolume"    amixer set Master 2%+
 key "XF86AudioPlay"           playerctl -p audacious play-pause
 key "XF86AudioNext"           playerctl -p audacious next
 key "XF86AudioPrev"           playerctl -p audacious previous
+key "XF86AudioStop"           playerctl -p audacious stop
