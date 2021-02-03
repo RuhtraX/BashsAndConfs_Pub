@@ -1,30 +1,38 @@
 #!/bin/bash
-echo -n "remove .jpg files after convertion? [y/n] "
-read ans
-if [ "$ans" != "y" ] && [ "$ans" != "Y" ] ; then
-	for i in *.jpg; do
-		if [ "$i" == "*.jpg" ] ; then
-		 echo "No jpg files present"
-		 exit 1
-		fi
-		echo "Converting file $i"
-		f=`echo "$i" | head -c -4`
-		convert "$i" "$f"png
-	done
+while :
+do
+	echo -n "remove .jpg files after convertion? [y/n] "
+	read ans
+	ans=${ans^^}
+	if [ "$ans" == 'N' ] || [ "$ans" == 'Y' ]
+	then
+		break
+	fi
+done
+if [ "$ans" != "Y" ] ; then
+  for i in *.jpg; do
+    if [ "$i" == "*.jpg" ] ; then
+     echo "No jpg files present"
+     exit 1
+    fi
+    echo "Converting file $i"
+    f=`echo "$i" | head -c -4`
+    convert "$i" "$f"png
+  done
 else
-	for i in *.jpg; do
-		if [ "$i" == '*.jpg' ] ; then
-			echo "No jpg files present"
-			exit 1
-		fi
-		echo "Converting file $i"
-		f=`echo "$i" | head -c -4`
-		convert "$i" "$f"png
-		if (( $? == 0 )); then
-			rm "$i"
-		else
-			exit 2
-		fi
-		echo "Removed file $i"
-	done
+  for i in *.jpg; do
+    if [ "$i" == '*.jpg' ] ; then
+      echo "No jpg files present"
+      exit 1
+    fi
+    echo "Converting file $i"
+    f=`echo "$i" | head -c -4`
+    convert -quality 94 "$i" "$f"png
+    if (( $? == 0 )); then
+      rm "$i"
+    else
+      exit 2
+    fi
+    echo "Removed file $i"
+  done
 fi
