@@ -4,3 +4,4 @@ vivaldi-stable.workspace: 3
 audacious.ignoreTaskBar: 1
 audacious.allWorkspaces: 1
 Thunderbird.tray: 1
+Thunderbird.workspace: 0
