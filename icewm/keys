@@ -2,7 +2,7 @@ key "Alt+Ctrl+i"       firefox
 key "Alt+Ctrl+t"       sakura
 key "Super+r"          dmenu_run
 key "Super+e"          pcmanfm-qt
-key "Alt+Ctrl+m"       audacious
+key "Alt+Ctrl+m"       audacious --gtk
 key "Ctrl+Shift+Esc"   ksysguard
 key "Alt+Ctrl+Esc"     xkill   
 key "Print"            io.elementary.screenshot-tool -s
@@ -15,3 +15,4 @@ key "XF86AudioPlay"           playerctl -p audacious play-pause
 key "XF86AudioNext"           playerctl -p audacious next
 key "XF86AudioPrev"           playerctl -p audacious previous
 key "XF86AudioStop"           playerctl -p audacious stop
+key "XF86AudioMute"           amixer set Master toggle
