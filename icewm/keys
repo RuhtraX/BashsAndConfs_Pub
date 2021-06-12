@@ -5,8 +5,8 @@ key "Super+e"          pcmanfm-qt
 key "Alt+Ctrl+m"       audacious --gtk
 key "Ctrl+Shift+Esc"   ksysguard
 key "Alt+Ctrl+Esc"     xkill   
-key "Print"            io.elementary.screenshot-tool -s
-key "Ctrl+Print"       io.elementary.screenshot-tool -r
+key "Print"            gnome-screenshot
+key "Ctrl+Print"       gnome-screenshot -a
 
 # Multinoias
 key "XF86AudioLowerVolume"    amixer set Master 2%-
