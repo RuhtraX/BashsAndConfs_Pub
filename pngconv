@@ -29,10 +29,9 @@ else
     f=`echo "$i" | head -c -4`
     convert -quality 94 "$i" -background black -alpha remove "$f"jpg
     if (( $? == 0 )); then
-      rm "$i"
+      rm -v "$i"
     else
       exit 2
     fi
-    echo "Removed file $i"
   done
 fi
