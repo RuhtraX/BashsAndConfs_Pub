@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "/path/to/folder"
-typeset -i num=`ls | cat -n | awk 'END{print $1}'`
+typeset -i num=`ls | wc -l`
 echo "Total of $num options"
 while :; do
 	typeset -i choice=$(( ( RANDOM % $num) + 1 ))
