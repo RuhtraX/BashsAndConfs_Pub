@@ -31,6 +31,8 @@ Used for starting mpv with loop, shuffle and custom options for screenshots (req
 Used to "brute-force" download a file from the given URL using wget
 ### pngconv
 Used for converting all png files to jpg found within the current directory (requires [ImageMagick](https://imagemagick.org/index.php))
+### vid_duration
+Used to calculate the duration of video files in current folder. Requires a file filter as argument, for example: `vid_duration '*.mp4'`
 ### webpconv
 Used for converting all webp files to jpg found within the current directory (requires [ImageMagick](https://imagemagick.org/index.php))
 ### RandomAnimeFanservice
