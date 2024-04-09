@@ -1,16 +1,23 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
 cd /storage/emulated/0/Pictures/Screenshots
-for i in *.png
+files=`find . -maxdepth 1 -type f -iname "*.png"`
+IFS=$'\n'
+if [[ -z $files ]]
+then
+	echo "No png files present"
+	exit 1
+fi
+for file in $files
 do
-	echo "converting file $i"
-	f=`echo $i|head -c -5`
-	convert -quality 94 "$i" "/storage/sdcard1/Pictures/Screenshots/$f.jpg"
+	echo "converting file $file"
+	f=`echo $file | head -c -4`
+	convert -quality 94 "$file" "/storage/emulated/0/Pictures/Screenshots/$fjpg"
 	if (( $? != 0 ))
 	then
 		echo "Something went wrong"
-		exit 1
+		unset IFS
+		exit 2
 	fi
-	rm $i
-	echo "removed file $i"
+	rm -v "$i"
 done
+unset IFS

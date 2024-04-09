@@ -1,4 +1,11 @@
 #!/bin/bash
+files=`find . -maxdepth 1 -type f -iname "*.jpg"`
+if [[ -z $files ]]
+then
+  echo "No jpg files present"
+  exit 1
+fi
+IFS=$'\n'
 while :
 do
 	echo -n "remove .jpg files after convertion? [y/n] "
@@ -9,29 +16,20 @@ do
 		break
 	fi
 done
-if [ "$ans" != "Y" ] ; then
-  for i in *.jpg; do
-    if [ "$i" == "*.jpg" ] ; then
-     echo "No jpg files present"
-     exit 1
+for file in $files
+do
+  echo "Converting file $file"
+  f=`echo "$file" | head -c -4`
+  convert "$file" "$f"png
+  if (( $? == 0 ))
+  then
+    if [ "$ans" == 'Y' ]
+    then
+      rm -v "$file"
     fi
-    echo "Converting file $i"
-    f=`echo "$i" | head -c -4`
-    convert "$i" "$f"png
-  done
-else
-  for i in *.jpg; do
-    if [ "$i" == '*.jpg' ] ; then
-      echo "No jpg files present"
-      exit 1
-    fi
-    echo "Converting file $i"
-    f=`echo "$i" | head -c -4`
-    convert -quality 94 "$i" "$f"png
-    if (( $? == 0 )); then
-      rm -v "$i"
-    else
-      exit 2
-    fi
-  done
-fi
+  else
+    unset IFS
+    exit 2
+  fi
+done
+unset IFS
