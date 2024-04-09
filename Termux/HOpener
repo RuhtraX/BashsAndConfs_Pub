@@ -9,6 +9,8 @@ while :; do
   echo "Choosen one: $choice"
   choosen=`ls | awk "NR==$choice"`
   echo $choosen
+	file=`ls "$choosen" | awk "NR==1"`
+	xdg-open "$choosen/$file"
   echo -n "One more? [Y/n] "
   read ans
   if [ ! -z "$ans" ]; then
