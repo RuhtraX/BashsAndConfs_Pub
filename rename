@@ -9,11 +9,11 @@ else
 		name="$1"
 		typeset -i num="$2"
 	else
-		echo "Usage for renaming mpv*.jpg files:"
-		echo "	rename [newName] [number to start counting]"
-		echo "or for renaming oldName*.jpg files:"
-		echo "	rename [oldName] [newName] [number]"
-		echo "if number = 0 I'll try to detect it automatically"
+		echo "Usage for renaming mpv*.jpg files:" >&2
+		echo "	rename [newName] [number to start counting]" >&2
+		echo "or for renaming oldName*.jpg files:" >&2
+		echo "	rename [oldName] [newName] [number]" >&2
+		echo "if number = 0 I'll try to detect it automatically" >&2
 		exit 1
 	fi
 fi
@@ -36,4 +36,3 @@ for i in "$oldName"*.jpg ; do
 	num=$num+1
 done
 exit 0
-
