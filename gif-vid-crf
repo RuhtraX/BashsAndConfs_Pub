@@ -1,6 +1,6 @@
 #!/bin/bash
-gifs = `find . -maxdepth 1 -type f -iname "*.gif"`
-if [[ -z $files ]]
+gifs=`find . -maxdepth 1 -type f -iname "*.gif"`
+if [[ -z $gifs ]]
 then
 	echo "No gif files present"
 	exit 1
@@ -10,9 +10,9 @@ IFS=$'\n'
 if [ ! -z ${1+x} ]; then
 	crf=$1
 fi
-for gif in gifs
+for gif in $gifs
 do
-	f=`echo "$i"|head -c -5`
+	f=`echo "$gif" | head -c -5`
 	echo "converting file $gif"
 	ffmpeg -loglevel 16 -y -i "$gif" -c:v h264 -an -q:v $crf "$f.mp4"
 	if [ $? != 0 ]; then
@@ -21,6 +21,6 @@ do
 		exit 2
 	fi
 	echo -n "done; "
-	rm -v "$i"
+	rm -v "$gif"
 done
 unset IFS
