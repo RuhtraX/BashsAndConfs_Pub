@@ -20,7 +20,7 @@ for file in $files
 do
   echo "Converting file $file"
   f=`echo "$file" | head -c -5`
-  convert -quality 94 "$file" -background black -alpha remove "$f"jpg
+  magick -quality 94 "$file" -background black -alpha remove "$f"jpg
   if (( $? == 0 ))
   then
     if [ "$ans" == 'Y' ]
