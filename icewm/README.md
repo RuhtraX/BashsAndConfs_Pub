@@ -7,8 +7,9 @@
 - pcmanfm-qt
 - audacious
 - ksysguard
+- picom
 - xkill
-- elementary.screenshot-tool
+- gnome-screenshot
 - redshift
 - nm-applet
 - transmission-qt
